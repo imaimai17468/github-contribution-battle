@@ -1,6 +1,12 @@
 import './globals.css'
 import type { Metadata } from 'next'
 import { KumaRegistry } from '@kuma-ui/next-plugin/registry'
+import { Raleway } from 'next/font/google'
+
+const RalewayFont = Raleway({
+  weight: '400',
+  subsets: ['latin'],
+})
 
 export const metadata: Metadata = {
   title: 'Github Contribution Battle',
@@ -14,7 +20,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body>
+      <body className={RalewayFont.className}>
         <KumaRegistry>{children}</KumaRegistry>
       </body>
     </html>
